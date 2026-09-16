@@ -1,6 +1,4 @@
-// mpc_simple.cpp
-// 编译：g++ -std=c++17 -O2 mpc_simple.cpp -o mpc -I /path/to/eigen
-// 运行：./mpc
+
 #include <Eigen/Dense>
 #include <iostream>
 using namespace Eigen;
@@ -96,3 +94,4 @@ int main() {
         x = mpc.step(x, u0);
     }
 }
+//构造 A/B/Q/R → 预计算 A_bar/B_bar → 用 -H⁻¹g 求解 → 只执行第一步

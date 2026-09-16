@@ -19,7 +19,7 @@ public:
                  + ki_ * integral_                   // I 项
                  + kd_ * derivative;                 // D 项
 
-        // 输出限幅
+        // 输出限幅.。‘/’/
         if (u >  u_max_) u =  u_max_;
         if (u < -u_max_) u = -u_max_;
 
@@ -53,3 +53,4 @@ int main() {
         }
     }
 }
+//误差 → 三项加权求和 → 限幅
