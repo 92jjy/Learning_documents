@@ -1,10 +1,7 @@
-// occ_grid.cpp
-// 编译：g++ -std=c++17 -O2 occ_grid.cpp -o occ_grid
-// 运行：./occ_grid
+
 #include <bits/stdc++.h>
 using namespace std;
 
-// ===== 参数 =====
 const int    W = 30;              // 栅格宽（列数）
 const int    H = 15;              // 栅格高（行数）
 const double P_OCC   = 0.7;       // 传感器命中时，该格为占据的概率
@@ -13,10 +10,9 @@ const double P_PRIOR = 0.5;       // 先验：未知，占据=空闲=0.5
 const double L_MIN   = -3.0;      // 对数几率下限（防止过度自信）
 const double L_MAX   =  3.0;      // 对数几率上限
 
-// ===== 全局数据 =====
 double L_occ, L_free, L_prior;            // 三种情形的对数几率
 vector<vector<double>> grid;              // 每个格子的对数几率
-vector<vector<int>>    truth;             // 真实地图（仅仿真用）
+vector<vector<int>>    truth;             // 真实地图）
 
 // 概率 -> 对数几率
 double prob2logodds(double p) { return log(p / (1.0 - p)); }
